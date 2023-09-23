@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Assignment</title>
+</head>
+
+<body>
+   
+    <p id="first"></p>
+    <p id="second"></p>
+    <p id="third"></p>
+    <p id="fourth"></p>
+
+    <script>
+        
+       //Question 1
+        const testArray = [7, 13, 15, 21, 30, 4, 95];
+        const testArray1 = [1, 2, 3, 4, 5]; 
+        const testArray2 = [10, -5, 7, 2, 1]; 
+        const testArray3 = []; 
+        let newTestArray = doubleEven(testArray);
+        let newTestArray1 = doubleEven(testArray1);
+        let newTestArray2 = doubleEven(testArray2);
+        let newTestArray3 = doubleEven(testArray3);
+       
+        document.write(`Question 1  <br>  `);
+        document.write(`${newTestArray}  <br> `);
+        document.write(`${newTestArray1} <br>`);
+        document.write(`${newTestArray2} <br>`);            
+        document.write(`${newTestArray3}  <br>`);
+       
+        function doubleEven(num) {
+            for (var i = 0; i < num.length; i++) {
+                let digits = num[i];
+                if (digits % 2 == 0) {
+                    digits *= 2;
+                    num[i] = digits;
+                }
+            }
+            return num;
+        }
+
+        // Question 2
+        const testArray4 = ["apple", "banana", "cherry", "date"]; 
+        const testArray5 = ["one", "two", "three", "four", "five"]; 
+        const testArray6 = []; 
+        let newtestArray4 = getLengths(testArray4);
+        let newtestArray5 = getLengths(testArray5);
+        let newtestArray6 = getLengths(testArray6);
+        document.write(`Question 2  <br>  `);
+        document.write(`${newtestArray4}<br>`);
+        document.write(`${newtestArray5}  <br>  `);
+        document.write(`${newtestArray6}  <br> `);
+        function getLengths(test) {
+            let lengths = [];
+            for (let i = 0; i < test.length; i++) {
+                lengths.push(test[i].length);
+            }
+            return lengths;
+        }
+
+        // Question 3
+        const testArray7 = [3.14, 2.71, 1.618, 1.0]; 
+        const testArray8 = [10.5, 20.2, 5.7, 30.1]; 
+        const testArray9 = [-1.5, -2.0, -0.5, -0.2]; 
+
+        let newtestArray7 = find(testArray7);
+        let newtestArray8 = find(testArray8);
+        let newtestArray9 = find(testArray9);
+        document.write(`Question 3  <br>  `);
+        document.write(`${newtestArray7}  <br>  `);
+        document.write(`${newtestArray8}  <br>  `);
+        document.write(`${newtestArray9}  <br>  `);
+
+        let flotat = [3.14, 2.71, 1.618, 1.0];
+        let test22 = find(flotat);
+
+        function find(flotation) {
+            let minValue = Math.min(...flotation);
+            let minIndex = flotation.indexOf(minValue);
+            return minIndex;
+        }
+
+
+
+
+        // Question 4
+
+       
+       
+
+
+     
+        /*
+  function check(){
+      if(arraysAreEqual(test1, test2)){
+     return "true";
+      }else{
+       return "false";
+  }
+} */
+
+
+const testArray10 = [1, 2, 3, 4, 5];
+const testArray11 = [1, 2, 3, 4, 5]; 
+const testArray12 = [1, 2, 3, 4, 5];
+const testArray13 = [1, 2, 3, 4, 6]; 
+const testArray14 = [];
+const testArray15 = []; 
+const testArray16 = [1, 2, 3];
+const testArray17 = [1, 2, 3, 4]; 
+
+let newtestArray10 = equalArrays(testArray10, testArray11);
+let newtestArray12 = equalArrays(testArray12, testArray13);
+
+let newtestArray14 = equalArrays(testArray14, testArray15);
+
+let newtestArray16 = equalArrays(testArray16 ,testArray17);
+
+document.write(`Question 4 <br>`);
+document.write(`${newtestArray10}  <br>`);
+document.write(`${newtestArray12}  <br>`);
+document.write(`${newtestArray14}  <br>`);
+document.write(`${newtestArray16}  <br>`);
+
+
+function equalArrays(test1, test2) {
+    if (!Array.isArray(test1) && !Array.isArray(test2)) {
+        return false;
+    }
+    if (test1.length !== test2.length) {
+        return false;
+    }
+    for (let i = 0; i < test1.length; i++) {
+        if (test1[i] !== test2[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+    </script>
+</body>
+
+</html>
